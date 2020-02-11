@@ -1,0 +1,15 @@
+[all]
+
+[eos]
+arista-veos
+
+[ios]
+cisco-7606
+
+[nxos]
+nxos-nexus
+
+
+[junos]
+olive-juniper
+
