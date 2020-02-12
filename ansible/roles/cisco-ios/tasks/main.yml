@@ -5,6 +5,7 @@
 
 - name: Configure access-list for vty lines
   ios_config:
-   replace: line
-   src: ./roles/cisco-ios/templates/access-list.j2
-
+   src: ./roles/cisco-ios/templates/base_template.j2
+   running_config:
+   save_when: modified
+  ignore_errors: yes

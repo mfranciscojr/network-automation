@@ -1,12 +1,9 @@
----
-_vty_acl_host:
-  - 192.168.1.11
-  - 192.168.1.12
-  - 192.168.1.13
-  - 102.168.1.14
-
 syslogs_config:
   - 192.168.10.1
 
-domain_name:
-  - lab.local
+domain_name: 
+  lab.local
+
+ntp_server:
+  - 192.168.100.1
+  - 192.168.100.3
