@@ -2,11 +2,6 @@ no ip access-list extended vty-acl
 !
 ip access-list extended vty-acl
 !
-permit tcp host 192.168.1.11 host 192.168.1.50 eq 22
-permit tcp host 192.168.1.12 host 192.168.1.50 eq 22
-permit tcp host 192.168.1.13 host 192.168.1.50 eq 22
-permit tcp host 192.168.1.14 host 192.168.1.50 eq 22
-permit tcp host 192.168.1.15 host 192.168.1.50 eq 22
-permit tcp host 192.168.1.16 host 192.168.1.50 eq 22
-permit tcp host 192.168.1.17 host 192.168.1.50 eq 22
-permit tcp host 192.168.1.18 host 192.168.1.50 eq 22
+{% for acl_host in acl_host %}
+permit tcp host {{acl_host}} host 192.168.1.50 eq 22
+{% endfor %}
