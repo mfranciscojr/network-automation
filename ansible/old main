@@ -1,0 +1,14 @@
+- name: show access-list interfaces
+  ios_command:
+    commands:
+      - show ip access-list vty-acl
+  register: result
+
+- name: Show result of commands
+  debug:
+    var: result.stdout_lines
+- name: backup cisco config
+  ios_config:
+    backup: yes
+    backup_options:
+      dir_path: ./misc/backup_configs/cisco

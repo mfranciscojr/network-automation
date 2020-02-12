@@ -2,23 +2,9 @@
 # tasks file for cisco-ios
 
 # tasks file for cisco-ios
-- name: backup cisco config
-  ios_config:
-    backup: yes
-    backup_options:
-      dir_path: ./misc/backup_configs/cisco
 
 - name: Configure access-list for vty lines
   ios_config:
    replace: line
    src: ./roles/cisco-ios/templates/access-list.j2
 
-- name: show access-list interfaces
-  ios_command:
-    commands:
-      - show ip access-list vty-acl
-  register: result
-
-- name: Show result of commands
-  debug:
-    var: result.stdout_lines

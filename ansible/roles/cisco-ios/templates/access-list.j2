@@ -2,10 +2,17 @@ no ip access-list extended vty-acl
 !
 ip access-list extended vty-acl
 !
-{% for acl_host in acl_host %}
-permit tcp host {{_vty_acl_host}} host 192.168.1.50 eq 22
+logging buffered 96000 
+!
+ip domain name {{domain_name}}
+!
+{% for item in cisco_network_users %}
+username {{item.net_user}} privilege 15 secret {{item.net_pass }}
 {% endfor %}
 
-logging {{_syslogs_config}}
-logging buffered 96000
-ip domain name 
+!
+{% for cisco_vty_acl_host in cisco_vty_acl_host %}
+permit tcp host {{cisco_vty_acl_host}} host 192.168.1.50 eq 22
+{% endfor %}
+!
+
