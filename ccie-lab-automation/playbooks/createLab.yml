@@ -1,9 +1,11 @@
 ---
- - name: CCIE LAB RESET
+ - name: Copy Lab to Lab Directory
    hosts: localhost
    connection: local
    gather_facts: False
    become: yes
    tasks:
-    - name: Login
-      script: bash.sh
+    - name: Copy Lab
+      copy:
+       src: ../labs/INE_CCIE.unl
+       dest: /opt/unetlab/labs/INE_CCIE.unl
