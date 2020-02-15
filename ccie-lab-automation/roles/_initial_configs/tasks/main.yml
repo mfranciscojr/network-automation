@@ -1,5 +1,0 @@
----
-# tasks file for _initial_configs
-- name:
-  ios_config:
-    backup: yes

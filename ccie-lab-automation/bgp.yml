@@ -1,0 +1,5 @@
+---
+ - name: Copy Lab
+   hosts: r1
+   roles: 
+    - authenticating.bgp.peerings

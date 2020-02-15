@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - _initial_configs
+    - authenticating.bgp.peerings

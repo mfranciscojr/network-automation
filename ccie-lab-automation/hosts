@@ -1,13 +1,6 @@
 [controller]
 localhost ansible_connection=local
 
-[cisco]
-routers
-switch
-
-[cisco:vars]
-
-
 [routers]
 r1
 r2

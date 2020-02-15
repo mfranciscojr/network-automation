@@ -1,0 +1,3 @@
+---
+- name: Copy Lab
+  include: playbooks/copyLab.yml
