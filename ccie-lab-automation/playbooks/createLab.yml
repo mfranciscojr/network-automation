@@ -1,0 +1,9 @@
+---
+ - name: CCIE LAB RESET
+   hosts: localhost
+   connection: local
+   gather_facts: False
+   become: yes
+   tasks:
+    - name: Login
+      script: bash.sh
