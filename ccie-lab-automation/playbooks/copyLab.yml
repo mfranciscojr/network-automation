@@ -1,5 +1,5 @@
 ---
- - name: Copy Lab to Lab Directory
+ - name: Copy INE-CCIE LAB to Lab Directory
    hosts: localhost
    connection: local
    gather_facts: False
@@ -9,14 +9,14 @@
       copy:
        src: ../labs/INE_CCIE.unl
        dest: /opt/unetlab/labs/INE_CCIE.unl
-       
-    - name: Update /etc/hosts
-      lineinfile:
-        path: /etc/hosts
-        create: yes
-        state: present
-        insertafter: EOF
-        block: |
+       mode: 777
+
+    - name: Update /etc/hosts for the lab ip address
+      blockinfile:
+       path: /etc/hosts
+       state: present
+       insertafter: EOF
+       block: |
           r1 192.168.1.101
           r2 192.168.1.102
           r3 192.168.1.103
