@@ -10,6 +10,12 @@
        src: ../labs/INE_CCIE.unl
        dest: /opt/unetlab/labs/INE_CCIE.unl
        mode: 777
+       
+    - name: Make my directory tree readable
+      file:
+       path: /opt/unetlab/labs
+       mode: u=rwX,g=rX,o=rX
+       recurse: yes
 
     - name: Update /etc/hosts for the lab ip address
       blockinfile:
