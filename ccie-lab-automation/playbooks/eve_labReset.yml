@@ -1,8 +1,0 @@
----
- - name: CCIE LAB RESET
-   hosts: localhost
-   connection: local
-   gather_facts: False
-   tasks:
-    - name: RESET CONFIG TO DEFAULT
-      shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE/INE_CCIE.unl/nodes/wipe'

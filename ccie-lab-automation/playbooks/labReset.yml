@@ -1,0 +1,15 @@
+---
+ - name: Reset Lab to Basic Configuration
+   hosts: localhost
+   connection: local
+   gather_facts: False
+   tasks:
+
+    - name: Login to API
+      script: api_login.sh
+    - name: RESET CONFIG TO DEFAULT
+      shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE.unl/nodes/wipe'
+    - name: Start ALL NODES 
+      shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/labs/INE_CCIE/INE_CCIE.unl/nodes/start'
+    - name: Logout API
+      shell: 'curl -s -c /tmp/cookie -b /tmp/cookie -X GET -H "Content-type: application/json" http://127.0.0.1/api/auth/logout'
