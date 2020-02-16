@@ -1,7 +1,0 @@
----
-- name: retrive device configs from cisco devices
-  gather_facts: false
-  gather_subset: min
-  hosts: ios
-  roles:
-   - cisco-ios

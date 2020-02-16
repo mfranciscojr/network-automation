@@ -1,9 +1,0 @@
-syslogs_config:
-  - 192.168.10.1
-
-domain_name: 
-  lab.local
-
-ntp_server:
-  - 192.168.100.1
-  - 192.168.100.3

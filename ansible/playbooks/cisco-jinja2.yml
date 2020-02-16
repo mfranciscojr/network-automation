@@ -1,5 +1,0 @@
----
-- name: Template Creator For Cisco
-  connection: local
-  template:
-    src: 
